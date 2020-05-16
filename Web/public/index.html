@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flipped Classroom翻轉教室</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/image/icon.png" type="img/icon.png" sizes="16x16">
+
+
+</head>
+
+<body data-target="#navbarScroll" data-spy="scroll">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navbarScroll">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Flipped Classroom 翻轉教室</a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#myNavigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="myNavigation">
+                <ul class="nav navbar-nav">
+                    <!-- <li class="active"><a href="#">首頁</a></li> -->
+                    <li><a href="#news">最新消息</a></li>
+                    <li><a href="#teacher">師資陣容</a></li>
+                    <li><a href="#curriculumInformation">課程資訊</a></li>
+                    <li><a href="#aboutUs">關於我們</a></li>
+                    <li><a href="#contactUs" data-toggle="modal">聯絡我們</a></li>
+                    <li><a href="#login" data-toggle="modal">登入</a></li>
+                </ul>
+            </div>
+
+    </nav>
+
+    <!-- CAROUSEL-->
+    <div id="topCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators //-->
+        <ol class="carousel-indicators">
+            <li data-target="#topCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#topCarousel" data-slide-to="1"></li>
+            <li data-target="#topCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Indicators end -->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img width="100%" src="image/banner01.jpg" alt="">
+            </div>
+            <div class="item">
+                <img width="100%" src="image/banner02.jpg" alt="">
+            </div>
+            <div class="item">
+                <img width="100%" src="image/banner03.jpg" alt="">
+            </div>
+            <div class="item">
+                <img width="100%" src="image/banner04.jpg" alt="">
+            </div>
+            <div class="item">
+                <img width="100%" src="image/banner05.jpg" alt="">
+            </div>
+        </div>
+        <!-- Wrapper for slides end //-->
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#topCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#topCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+        <!-- carousel end //-->
+    </div>
+
+    <!-- NEWS -->
+    <section class="page-section bg-primary text-white mb-0" id="news">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-white">最新消息</h2>
+        </div>
+        <section class="news-section">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        </div><!-- /.panel-group -->
+                    </div><!-- /.col-md-offset-3 col-md-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section>
+    </section>
+
+    <!-- TEACHER -->
+    <section class="page-section bg-primary text-white mb-0" id="teacher">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-white">師資陣容</h2>
+        </div>
+        <section id="service" class="teacher-section">
+            <div class="container">
+                <div class="row" style="padding-top:70px" id="tabs">
+                    <a href="#">
+                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
+                            <img src="image/teacher (1).png" class="img-responsive center-block">
+                            <h3>國文科 張三</h3>
+                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
+                            希望大家能發現話中之話。 <br />
+                            補習班的出現，重寫了人生的意義。<br />
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
+                            <img src="image/teacher (2).png" class="img-responsive center-block">
+                            <h3>英文科 李四</h3>
+                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
+                            希望大家能發現話中之話。 <br />
+                            補習班的出現，重寫了人生的意義。<br />
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
+                            <img src="image/teacher (3).png" class="img-responsive center-block">
+                            <h3>數學科 王五</h3>
+                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
+                            希望大家能發現話中之話。 <br />
+                            補習班的出現，重寫了人生的意義。<br />
+                        </div>
+                    </a>
+                </div>
+                <div class="row" style="padding-top:70px" id="tabs">
+                    <a href="#">
+                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
+                            <img src="image/teacher (1).png" class="img-responsive center-block">
+                            <h3>自然科 張三</h3>
+                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
+                            希望大家能發現話中之話。 <br />
+                            補習班的出現，重寫了人生的意義。<br />
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
+                            <img src="image/teacher (2).png" class="img-responsive center-block">
+                            <h3>歷史科 李四</h3>
+                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
+                            希望大家能發現話中之話。 <br />
+                            補習班的出現，重寫了人生的意義。<br />
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
+                            <img src="image/teacher (3).png" class="img-responsive center-block">
+                            <h3>數學科 王五</h3>
+                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
+                            希望大家能發現話中之話。 <br />
+                            補習班的出現，重寫了人生的意義。<br />
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+            <!-- /.container -->
+        </section>
+    </section>
+
+    <!-- CURRICULUM -->
+    <section class="page-section bg-primary text-white mb-0" id="curriculumInformation">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-white">課程資訊</h2>
+        </div>
+        <section class="curriculum-section">
+            <div class="table-responsive">
+                <div id="curriculum-table" class="membership-pricing-table">
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- ABOUTUS -->
+    <section class="page-section bg-primary text-white mb-0" id="aboutUs">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-white">關於我們</h2>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <hr class="divider-title">
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+                    <div class="project">
+                        <figure class="img-responsive">
+                            <img src="image/trophy (1).png">
+                            <span class="actions">
+                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
+                            </span>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+                    <div class="project">
+                        <figure class="img-responsive">
+                            <img src="image/trophy (2).png">
+                            <span class="actions">
+                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
+                            </span>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+                    <div class="project">
+                        <figure class="img-responsive">
+                            <img src="image/trophy (3).png">
+                            <span class="actions">
+                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
+                            </span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+                    <div class="project">
+                        <figure class="img-responsive">
+                            <img src="image/trophy (1).png">
+                            <span class="actions">
+                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
+                            </span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+                    <div class="project">
+                        <figure class="img-responsive">
+                            <img src="image/trophy (2).png">
+                            <span class="actions">
+                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
+                            </span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+                    <div class="project">
+                        <figure class="img-responsive">
+                            <img src="image/trophy (3).png">
+                            <span class="actions">
+                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
+                            </span>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- CONTACTUS -->
+    <div id="contactUs" class="modal fade ">
+        <div class="modal-content container">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <h1 class="modal-title">聯絡我們 Contact</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h3><i class="fa fa-home fa-1x"></i> 地址 Adress：</h3>
+                        <p>408台中市南屯區公益路二段51號</p>
+                        <br />
+                        <br />
+                        <h3><i class="fa fa-envelope fa-1x"></i> 信箱E-mail：</h3>
+                        <p>service@agnes.com.tw</p>
+                        <br />
+                        <br />
+                        <h3><i class="fa fa-user fa-1x"></i> 電話 Phone：</h3>
+                        <p>(04) 2326-5860</p>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <div class="col-sm-6 ">
+                    <iframe class="well"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.60443204226!2d120.648819614989!3d24.15052618439365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d964fff6dc5%3A0x5d526ce61b5b9ca6!2zNDA45Y-w5Lit5biC5Y2X5bGv5Y2A5YWs55uK6Lev5LqM5q61NTHomZ8!5e0!3m2!1szh-TW!2stw!4v1586006606152!5m2!1szh-TW!2stw"
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="login" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="avatar">
+                        <img src="image/login.png" alt="">
+                    </div>
+                    <h4 class="modal-title">會員登入</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <input id="username" type="text" class="form-control" name="username" placeholder="帳號"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input id="password" type="password" class="form-control" name="password" placeholder="密碼"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="userLogin" type="button"
+                                class="btn btn-primary btn-lg btn-block">登入</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a id="redirectForget" href="#">忘記密碼?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FORGETPW -->
+    <div id="forgetPW" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div id="forgetPng" class="avatar">
+                        <img src="image/questionMark.png" alt="">
+                    </div>
+                    <h4 class="modal-title">忘記密碼</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <input id="forgetUsername" type="text" class="form-control" name="forgetUsername"
+                                placeholder="登入帳號" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input id="forgetEmail" type="text" class="form-control" name="forgetEmail"
+                                placeholder="會員Email" required="required">
+                        </div>
+                        <div class="form-group">
+                            <button id="sendPW" type="button"
+                                class="btn btn-primary btn-lg btn-block">寄出新密碼</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a id="redirectLogin" href="#">會員登入</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <span class="logo">Flipped Classroom</span>
+                </div>
+                <div>
+                    <p>Copyright © 2020 Flipped Classroom Inc. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            //輪播圖
+            $('.carousel').carousel()
+
+            //登入和忘記密碼的切換
+            $('#login').on('click', '#redirectForget', function (e) {
+                $("#login").modal('hide');
+                $("#forgetPW").modal('show');
+            });
+
+            $('#forgetPW').on('click', '#redirectLogin', function (e) {
+                $("#forgetPW").modal('hide');
+                $("#login").modal('show');
+            });
+
+            //登入判斷
+            $('#login').on('click', '#userLogin', function (e) {
+                if ($("#username").val().trim()=="" || $("#password").val().trim()=="") {
+                    alert('帳號密碼不能為空!');
+                    return;
+                }
+                var logindata = {
+                    username: $("#username").val(),
+                    password: $("#password").val()
+                }
+
+                $.ajax({
+                    url: '/api/login',
+                    type: 'post',
+                    contentType: 'application/json',
+                    data: JSON.stringify(logindata),
+                    success: function (data) {
+                        window.location.replace("http://localhost:3000/" + data);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert('Login fail, please try again.');
+                    }
+                });
+            });
+
+            //最新消息
+            $.getJSON("/api/news/showall", function (data) {
+                var items = "";
+                // alert(JSON.stringify(data));
+                $.each(data, function () {
+                    items += '<div class="panel panel-default"> <div class="panel-heading" role="tab" id="heading' + this.id + '"> <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + this.id + '" aria-expanded="true" aria-controls="collapse' + this.id + '"> <span>';
+                    items += this.newsdate;
+                    items += '<br>';
+                    items += this.title;
+                    items += '</span> </a> </h4> </div><div id="collapse' + this.id + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + this.id + '"> <div class="panel-body">';
+                    items += this.content;
+                    items += '</div></div></div>';
+                });
+                $('#accordion').html(items);
+            });
+
+            //課程資訊
+            $.getJSON("/api/curriculum/showall", function (data) {
+                var items = '<table> <tbody> <tr> <th class="plan-header"></th> <th class="plan-header"> <div class="pricing-plan-name">國文</div></th> <th class="plan-header"> <div class="pricing-plan-name">英文</div></th> <th class="plan-header"> <div class="pricing-plan-name">數學</div></th> <th class="plan-header"> <div class="pricing-plan-name">自然</div></th> <th class="plan-header"> <div class="pricing-plan-name">歷史</div></th> </tr>';
+                $.each(data, function () {
+                    var today = "";
+                    switch (this.week) {
+                        case 1:
+                            today = "星期一";
+                            break;
+                        case 2:
+                            today = "星期二";
+                            break;
+                        case 3:
+                            today = "星期三";
+                            break;
+                        case 4:
+                            today = "星期四";
+                            break;
+                        case 5:
+                            today = "星期五";
+                            break;
+                        default:
+                            today = "沒有這一天";
+                    }
+                    items += '<tr> <td>' + today + '</td><td>' + this.chinese + '</td><td>' + this.english + '</td><td>' + this.math + '</td><td>' + this.science + '</td><td>' + this.history + '</td></tr>';
+                });
+                items += '</tbody></table>';
+                $('#curriculum-table').html(items.replace(/1/g, '<span class="glyphicon glyphicon-ok"></span>').replace(/0/g, '<span class="glyphicon glyphicon-remove"></span>'));
+            });
+        });
+
+
+        //回到頂端按鈕
+        (function () {
+            $("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
+            var img = "image/back-arrow.png",
+                locatioin = 1 / 2, // 按鈕出現在螢幕的高度
+                right = 10, // 距離右邊 px 值
+                opacity = 0.5, // 透明度
+                speed = 500, // 捲動速度
+                $button = $("#goTopButton"),
+                $body = $(document),
+                $win = $(window);
+            $button.attr("src", img);
+            $button.on({
+                mouseover: function () { $button.css("opacity", 1); },
+                mouseout: function () { $button.css("opacity", opacity); },
+                click: function () { $("html, body").animate({ scrollTop: 0 }, speed); }
+            });
+            window.goTopMove = function () {
+                var scrollH = $body.scrollTop(),
+                    winH = $win.height(),
+                    css = { "top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity };
+                if (scrollH > 20) {
+                    $button.css(css);
+                    $button.fadeIn("slow");
+                } else {
+                    $button.fadeOut("slow");
+                }
+            };
+            $win.on({
+                scroll: function () { goTopMove(); },
+                resize: function () { goTopMove(); }
+            });
+        })();
+    </script>
+</body>
+
+</html>
