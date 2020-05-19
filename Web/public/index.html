@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="/image/icon.png" type="img/icon.png" sizes="16x16">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 
 
 </head>
@@ -35,7 +37,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="myNavigation">
                 <ul class="nav navbar-nav">
-                    <!-- <li class="active"><a href="#">首頁</a></li> -->
                     <li><a href="#news">最新消息</a></li>
                     <li><a href="#teacher">師資陣容</a></li>
                     <li><a href="#curriculumInformation">課程資訊</a></li>
@@ -46,6 +47,14 @@
             </div>
 
     </nav>
+
+    <script id="navbarScroll" type="text/x-template">
+
+
+
+
+
+    </script>
 
     <!-- CAROUSEL-->
     <div id="topCarousel" class="carousel slide" data-ride="carousel">
@@ -111,67 +120,17 @@
         <section id="service" class="teacher-section">
             <div class="container">
                 <div class="row" style="padding-top:70px" id="tabs">
-                    <a href="#">
-                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
-                            <img src="image/teacher (1).png" class="img-responsive center-block">
-                            <h3>國文科 張三</h3>
-                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
-                            希望大家能發現話中之話。 <br />
-                            補習班的出現，重寫了人生的意義。<br />
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
-                            <img src="image/teacher (2).png" class="img-responsive center-block">
-                            <h3>英文科 李四</h3>
-                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
-                            希望大家能發現話中之話。 <br />
-                            補習班的出現，重寫了人生的意義。<br />
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
-                            <img src="image/teacher (3).png" class="img-responsive center-block">
-                            <h3>數學科 王五</h3>
-                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
-                            希望大家能發現話中之話。 <br />
-                            補習班的出現，重寫了人生的意義。<br />
-                        </div>
-                    </a>
-                </div>
-                <div class="row" style="padding-top:70px" id="tabs">
-                    <a href="#">
-                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
-                            <img src="image/teacher (1).png" class="img-responsive center-block">
-                            <h3>自然科 張三</h3>
-                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
-                            希望大家能發現話中之話。 <br />
-                            補習班的出現，重寫了人生的意義。<br />
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
-                            <img src="image/teacher (2).png" class="img-responsive center-block">
-                            <h3>歷史科 李四</h3>
-                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
-                            希望大家能發現話中之話。 <br />
-                            補習班的出現，重寫了人生的意義。<br />
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="col-md-4 col-sm-4 col-xs-4 hover">
-                            <img src="image/teacher (3).png" class="img-responsive center-block">
-                            <h3>數學科 王五</h3>
-                            孫叔平在不經意間這樣說過，研究工作必須從資料做起，不掌握第一手資料，研究工作只能是空中樓閣。 <br />
-                            希望大家能發現話中之話。 <br />
-                            補習班的出現，重寫了人生的意義。<br />
-                        </div>
-                    </a>
-                </div>
+                    <div v-for="item in list" class="col-md-4 col-sm-4 col-xs-4 hover">
+                        <img v-bind:src="item.img" class="img-responsive center-block">
+                        <h3>{{ item.name }}</h3>{{ item.content }}<br />
+                    </div>
+                    <div v-for="item in list2" class="col-md-4 col-sm-4 col-xs-4 hover">
+                        <img v-bind:src="item.img" class="img-responsive center-block">
+                        <h3>{{ item.name }}</h3>{{ item.content }}<br />
+                    </div>
 
-
+                </div>
             </div>
-            <!-- /.container -->
         </section>
     </section>
 
@@ -323,8 +282,7 @@
                                 required="required">
                         </div>
                         <div class="form-group">
-                            <button id="userLogin" type="button"
-                                class="btn btn-primary btn-lg btn-block">登入</button>
+                            <button id="userLogin" type="button" class="btn btn-primary btn-lg btn-block">登入</button>
                         </div>
                     </form>
                 </div>
@@ -358,8 +316,7 @@
                                 placeholder="會員Email" required="required">
                         </div>
                         <div class="form-group">
-                            <button id="sendPW" type="button"
-                                class="btn btn-primary btn-lg btn-block">寄出新密碼</button>
+                            <button id="sendPW" type="button" class="btn btn-primary btn-lg btn-block">寄出新密碼</button>
                         </div>
                     </form>
                 </div>
@@ -372,21 +329,86 @@
 
 
     <!-- FOOTER -->
-    <footer>
+    <footer id="Footer">
         <div class="container">
             <div class="row">
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                    <span class="logo">Flipped Classroom</span>
+                    <span class="logo">{{logo}}</span>
                 </div>
                 <div>
-                    <p>Copyright © 2020 Flipped Classroom Inc. All rights reserved</p>
+                    <p>{{footer}}</p>
                 </div>
             </div>
         </div>
     </footer>
 
+
+
     <script>
+        new Vue({
+            el: "#tabs",
+            data: {
+                list: [
+                    {
+                        name: "國文 張三",
+                        content: `蒹葭蒼蒼，白露為霜。所謂伊人，在水一方。
+                              溯洄從之，道阻且長；溯游從之，宛在水中央。
+                              蒹葭萋萋，白露未晞。所謂伊人，在水之湄。
+                              溯洄從之，道阻且躋；溯游從之，宛在水中坻。
+                              蒹葭采采，白露未已。所謂伊人，在水之涘。
+                              溯洄從之，道阻且右；溯游從之，宛在水中沚。`,
+                        img: "image/teacher (1).png"
+                    },
+                    {
+                        name: "英文 徐葳",
+                        content: `You're just too good to be true
+                               Can't take my eyes off of you
+                               You'd be like heaven to touch
+                               I wanna hold you so much
+                               At long last, love has arrived
+                               And I thank God I'm alive
+                               You're just too good to be true
+                               Can't take my eyes off of you` ,
+                        img: "image/teacher (2).png"
+                    },
+                    {
+                        name: "數學 高斯",
+                        content: `高斯是個不折不扣的天才。傳聞他在小學便獨立發現了等差數列求和公式。
+                               高斯小時候高斯家裡很窮，但他依舊喜歡看書。
+                               當高斯12歲時，已經開始懷疑幾何原本中的基礎證明。
+                               當他16歲時，預測在歐氏幾何之外必然會產生一門完全不同的幾何學，即非歐幾何學。
+                               由於高斯突出的才華，他被世人尊稱為「數學王子」。` ,
+                        img: "image/teacher (3).png"
+                    },
+                ],
+                list2: [
+                    {
+                        name: "自然 張衡",
+                        content: `張衡在機械製作上也有不平凡的成就，他先後製造過：指南車、記里鼓車、自飛木雕、地動儀、候風儀等機械。
+                    製作機械必須有良好的數學基礎，因此也著有《算罔論》，不過現在已經失傳了！他還推算出圓周率是在3.14至3.16之間呢！`,
+                        img: "image/teacher (4).png"
+                    },
+                    {
+                        name: "歷史 李白",
+                        content: `李白（701年5月19日－762年11月30日），字太白，號青蓮居士，中國唐朝詩人，自言祖籍隴西成紀（今甘肅省天水市秦安縣），先世西涼武昭王李暠之後，與李唐皇室同宗。
+                    幼時內遷，寄籍劍南道綿州（今四川省江油市青蓮鎮）。另外，郭沫若研究認為李白出生於吉爾吉斯碎葉河上的碎葉城，屬唐安西都護府（今楚河州托克馬克市），該說有一定影響。
+                    有「詩仙」、「詩俠」、「酒仙」、「謫仙人」等稱呼，活躍於盛唐，為傑出的浪漫主義詩人。與杜甫合稱「李杜」。被賀知章驚呼為「天上謫仙」。` ,
+                        img: "image/teacher (5).png"
+                    },
+                ]
+            }
+        });
+
+        new Vue({
+
+            el: '#Footer',
+            data: {
+                logo: 'Flipped Classroom',
+                footer: 'Copyright © 2020 Flipped Classroom Inc. All rights reserved'
+            }
+        });
+
         $(document).ready(function () {
             //輪播圖
             $('.carousel').carousel()
@@ -404,7 +426,7 @@
 
             //登入判斷
             $('#login').on('click', '#userLogin', function (e) {
-                if ($("#username").val().trim()=="" || $("#password").val().trim()=="") {
+                if ($("#username").val().trim() == "" || $("#password").val().trim() == "") {
                     alert('帳號密碼不能為空!');
                     return;
                 }
@@ -430,7 +452,6 @@
             //最新消息
             $.getJSON("/api/news/showall", function (data) {
                 var items = "";
-                // alert(JSON.stringify(data));
                 $.each(data, function () {
                     items += '<div class="panel panel-default"> <div class="panel-heading" role="tab" id="heading' + this.id + '"> <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + this.id + '" aria-expanded="true" aria-controls="collapse' + this.id + '"> <span>';
                     items += this.newsdate;
