@@ -36,10 +36,10 @@ class UserController extends Controller
                     $page = "school/views/admin/dashboard.php";
                     break;
                 case 2:
-                    $page = "school/views/teacher/dashboard.php";
+                    $page = "school/views/admin/teacher_dashboard.php";
                     break;
                 case 3:
-                    $page = "school/views/student/dashboard.php";
+                    $page = "school/views/admin/stu_dashboard.php";
                     break;
             }
             // $token = $user->createToken('Token Name')->accessToken;

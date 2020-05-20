@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="/image/icon.png" type="img/icon.png" sizes="16x16">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 
 </head>
 
@@ -47,14 +46,6 @@
             </div>
 
     </nav>
-
-    <script id="navbarScroll" type="text/x-template">
-
-
-
-
-
-    </script>
 
     <!-- CAROUSEL-->
     <div id="topCarousel" class="carousel slide" data-ride="carousel">
@@ -105,6 +96,25 @@
                 <div class="row">
                     <div>
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div v-for="news in info">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" v-bind:id="'heading'+news.id">
+                                        <h4 class="panel-title"> <a role="button" data-toggle="collapse"
+                                                data-parent="#accordion" :href="'#collapse' + news.id "
+                                                aria-expanded="true" :aria-controls="'collapse' + news.id">
+                                                <span></span>
+                                                {{ news.newsdate }}<br>
+                                                {{ news.title }}
+                                                </span> </a> </h4>
+                                    </div>
+                                    <div :id="'collapse' + news.id" class="panel-collapse collapse" role="tabpanel"
+                                        :aria-labelledby="'heading' + news.id ">
+                                        <div class="panel-body">
+                                            {{ news.content }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div><!-- /.panel-group -->
                     </div><!-- /.col-md-offset-3 col-md-6 -->
                 </div><!-- /.row -->
@@ -343,9 +353,58 @@
         </div>
     </footer>
 
-
-
     <script>
+
+        //課程資訊
+        $.getJSON("/api/curriculum/showall", function (data) {
+            var items = '<table> <tbody> <tr> <th class="plan-header"></th> <th class="plan-header"> <div class="pricing-plan-name">國文</div></th> <th class="plan-header"> <div class="pricing-plan-name">英文</div></th> <th class="plan-header"> <div class="pricing-plan-name">數學</div></th> <th class="plan-header"> <div class="pricing-plan-name">自然</div></th> <th class="plan-header"> <div class="pricing-plan-name">歷史</div></th> </tr>';
+            $.each(data, function () {
+                var today = "";
+                switch (this.week) {
+                    case 1:
+                        today = "星期一";
+                        break;
+                    case 2:
+                        today = "星期二";
+                        break;
+                    case 3:
+                        today = "星期三";
+                        break;
+                    case 4:
+                        today = "星期四";
+                        break;
+                    case 5:
+                        today = "星期五";
+                        break;
+                    default:
+                        today = "沒有這一天";
+                }
+                items += '<tr> <td>' + today + '</td><td>' + this.chinese + '</td><td>' + this.english + '</td><td>' + this.math + '</td><td>' + this.science + '</td><td>' + this.history + '</td></tr>';
+            });
+            items += '</tbody></table>';
+            $('#curriculum-table').html(items.replace(/1/g, '<span class="glyphicon glyphicon-ok"></span>').replace(/0/g, '<span class="glyphicon glyphicon-remove"></span>'));
+        });
+
+        //最新消息
+        new Vue({
+            el: '#accordion',
+            data() {
+                return {
+                    info: null
+                }
+            },
+            mounted() {
+                axios
+                    .get('/api/news/showall')
+                    .then(response => (this.info = response.data))
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        })
+
+
+        //師資陣容
         new Vue({
             el: "#tabs",
             data: {
@@ -400,6 +459,7 @@
             }
         });
 
+        //Footer
         new Vue({
 
             el: '#Footer',
@@ -449,50 +509,7 @@
                 });
             });
 
-            //最新消息
-            $.getJSON("/api/news/showall", function (data) {
-                var items = "";
-                $.each(data, function () {
-                    items += '<div class="panel panel-default"> <div class="panel-heading" role="tab" id="heading' + this.id + '"> <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse' + this.id + '" aria-expanded="true" aria-controls="collapse' + this.id + '"> <span>';
-                    items += this.newsdate;
-                    items += '<br>';
-                    items += this.title;
-                    items += '</span> </a> </h4> </div><div id="collapse' + this.id + '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading' + this.id + '"> <div class="panel-body">';
-                    items += this.content;
-                    items += '</div></div></div>';
-                });
-                $('#accordion').html(items);
-            });
 
-            //課程資訊
-            $.getJSON("/api/curriculum/showall", function (data) {
-                var items = '<table> <tbody> <tr> <th class="plan-header"></th> <th class="plan-header"> <div class="pricing-plan-name">國文</div></th> <th class="plan-header"> <div class="pricing-plan-name">英文</div></th> <th class="plan-header"> <div class="pricing-plan-name">數學</div></th> <th class="plan-header"> <div class="pricing-plan-name">自然</div></th> <th class="plan-header"> <div class="pricing-plan-name">歷史</div></th> </tr>';
-                $.each(data, function () {
-                    var today = "";
-                    switch (this.week) {
-                        case 1:
-                            today = "星期一";
-                            break;
-                        case 2:
-                            today = "星期二";
-                            break;
-                        case 3:
-                            today = "星期三";
-                            break;
-                        case 4:
-                            today = "星期四";
-                            break;
-                        case 5:
-                            today = "星期五";
-                            break;
-                        default:
-                            today = "沒有這一天";
-                    }
-                    items += '<tr> <td>' + today + '</td><td>' + this.chinese + '</td><td>' + this.english + '</td><td>' + this.math + '</td><td>' + this.science + '</td><td>' + this.history + '</td></tr>';
-                });
-                items += '</tbody></table>';
-                $('#curriculum-table').html(items.replace(/1/g, '<span class="glyphicon glyphicon-ok"></span>').replace(/0/g, '<span class="glyphicon glyphicon-remove"></span>'));
-            });
         });
 
 
