@@ -152,6 +152,36 @@
         <section class="curriculum-section">
             <div class="table-responsive">
                 <div id="curriculum-table" class="membership-pricing-table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th class="plan-header"></th>
+                                <th class="plan-header">
+                                    <div class="pricing-plan-name">國文</div>
+                                </th>
+                                <th class="plan-header">
+                                    <div class="pricing-plan-name">英文</div>
+                                </th>
+                                <th class="plan-header">
+                                    <div class="pricing-plan-name">數學</div>
+                                </th>
+                                <th class="plan-header">
+                                    <div class="pricing-plan-name">自然</div>
+                                </th>
+                                <th class="plan-header">
+                                    <div class="pricing-plan-name">歷史</div>
+                                </th>
+                            </tr>
+                            <tr v-for='curriculum in info '>
+                                <td>{{ '星期'+curriculum.week }}</td>
+                                <td v-html="replaceValue(curriculum.chinese)"></td>
+                                <td v-html="replaceValue(curriculum.english)"></td>
+                                <td v-html="replaceValue(curriculum.math)"></td>
+                                <td v-html="replaceValue(curriculum.science)"></td>
+                                <td v-html="replaceValue(curriculum.history)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -353,37 +383,10 @@
         </div>
     </footer>
 
+
+
     <script>
 
-        //課程資訊
-        $.getJSON("/api/curriculum/showall", function (data) {
-            var items = '<table> <tbody> <tr> <th class="plan-header"></th> <th class="plan-header"> <div class="pricing-plan-name">國文</div></th> <th class="plan-header"> <div class="pricing-plan-name">英文</div></th> <th class="plan-header"> <div class="pricing-plan-name">數學</div></th> <th class="plan-header"> <div class="pricing-plan-name">自然</div></th> <th class="plan-header"> <div class="pricing-plan-name">歷史</div></th> </tr>';
-            $.each(data, function () {
-                var today = "";
-                switch (this.week) {
-                    case 1:
-                        today = "星期一";
-                        break;
-                    case 2:
-                        today = "星期二";
-                        break;
-                    case 3:
-                        today = "星期三";
-                        break;
-                    case 4:
-                        today = "星期四";
-                        break;
-                    case 5:
-                        today = "星期五";
-                        break;
-                    default:
-                        today = "沒有這一天";
-                }
-                items += '<tr> <td>' + today + '</td><td>' + this.chinese + '</td><td>' + this.english + '</td><td>' + this.math + '</td><td>' + this.science + '</td><td>' + this.history + '</td></tr>';
-            });
-            items += '</tbody></table>';
-            $('#curriculum-table').html(items.replace(/1/g, '<span class="glyphicon glyphicon-ok"></span>').replace(/0/g, '<span class="glyphicon glyphicon-remove"></span>'));
-        });
 
         //最新消息
         new Vue({
@@ -458,6 +461,29 @@
                 ]
             }
         });
+
+        //課程資訊
+        new Vue({
+            el: '#curriculum-table',
+            data() {
+                return {
+                    info: null
+                }
+            },
+            mounted() {
+                axios
+                    .get('/api/curriculum/showall')
+                    .then(response => (this.info = response.data))
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            methods: {
+                replaceValue: function (room) {
+                    return room.toString().replace(/1/g, '<span class="glyphicon glyphicon-ok"></span>').replace(/0/g, '<span class="glyphicon glyphicon-remove"></span>');
+                },
+            }
+        })
 
         //Footer
         new Vue({
