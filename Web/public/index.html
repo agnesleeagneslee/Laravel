@@ -322,7 +322,8 @@
                                 required="required">
                         </div>
                         <div class="form-group">
-                            <button id="userLogin" type="button" class="btn btn-primary btn-lg btn-block">登入</button>
+                            <button @click="checkLogin()" id="userLogin" type="button"
+                                class="btn btn-primary btn-lg btn-block">登入</button>
                         </div>
                     </form>
                 </div>
@@ -383,10 +384,29 @@
         </div>
     </footer>
 
-
-
-    <script>
-
+  <script>
+        //登入判斷
+        new Vue({
+            el: '#userLogin',
+            methods: {
+                checkLogin: function () {
+                    if ($("#username").val().trim() == "" || $("#password").val().trim() == "") {
+                        alert('帳號密碼不能為空!');
+                        return;
+                    }
+                    axios.post('/api/login', {
+                        username: $("#username").val(),
+                        password: $("#password").val()
+                    })
+                        .then(function (response) {
+                            window.location.replace("http://localhost:3000/" + response.data);
+                        })
+                        .catch(function (error) {
+                            alert('Login fail, please try again.');
+                        });
+                }
+            }
+        })
 
         //最新消息
         new Vue({
@@ -509,32 +529,6 @@
                 $("#forgetPW").modal('hide');
                 $("#login").modal('show');
             });
-
-            //登入判斷
-            $('#login').on('click', '#userLogin', function (e) {
-                if ($("#username").val().trim() == "" || $("#password").val().trim() == "") {
-                    alert('帳號密碼不能為空!');
-                    return;
-                }
-                var logindata = {
-                    username: $("#username").val(),
-                    password: $("#password").val()
-                }
-
-                $.ajax({
-                    url: '/api/login',
-                    type: 'post',
-                    contentType: 'application/json',
-                    data: JSON.stringify(logindata),
-                    success: function (data) {
-                        window.location.replace("http://localhost:3000/" + data);
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert('Login fail, please try again.');
-                    }
-                });
-            });
-
 
         });
 
