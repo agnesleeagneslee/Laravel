@@ -5,16 +5,23 @@
     <title>Flipped Classroom翻轉教室</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bs.css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- bs.js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- icon -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- css -->
     <link rel="stylesheet" href="index.css">
+    <!-- icon -->
     <link rel="icon" href="/image/icon.png" type="img/icon.png" sizes="16x16">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <!-- axios -->
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
-
 </head>
 
 <body data-target="#navbarScroll" data-spy="scroll">
@@ -47,7 +54,7 @@
 
     </nav>
 
-    <!-- CAROUSEL-->
+    <!-- Carousel-->
     <div id="topCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators //-->
         <ol class="carousel-indicators">
@@ -83,10 +90,9 @@
         <a class="right carousel-control" href="#topCarousel" data-slide="next">
             <span class="icon-next"></span>
         </a>
-        <!-- carousel end //-->
     </div>
 
-    <!-- NEWS -->
+    <!-- News -->
     <section class="page-section bg-primary text-white mb-0" id="news">
         <div class="container">
             <h2 class="page-section-heading text-center text-white">最新消息</h2>
@@ -122,7 +128,7 @@
         </section>
     </section>
 
-    <!-- TEACHER -->
+    <!-- Teacher -->
     <section class="page-section bg-primary text-white mb-0" id="teacher">
         <div class="container">
             <h2 class="page-section-heading text-center text-white">師資陣容</h2>
@@ -144,7 +150,7 @@
         </section>
     </section>
 
-    <!-- CURRICULUM -->
+    <!-- Curriculum -->
     <section class="page-section bg-primary text-white mb-0" id="curriculumInformation">
         <div class="container">
             <h2 class="page-section-heading text-center text-white">課程資訊</h2>
@@ -187,7 +193,8 @@
         </section>
     </section>
 
-    <!-- ABOUTUS -->
+
+    <!-- Aboutus -->
     <section class="page-section bg-primary text-white mb-0" id="aboutUs">
         <div class="container">
             <h2 class="page-section-heading text-center text-white">關於我們</h2>
@@ -196,74 +203,21 @@
     <section>
         <div class="container">
             <hr class="divider-title">
-            <div class="row">
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+            <div class="row" id="about-tabs">
+                <div v-for="item in list" class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
                     <div class="project">
                         <figure class="img-responsive">
-                            <img src="image/trophy (1).png">
+                            <img  v-bind:src="item.img">
                             <span class="actions">
-                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
+                                <span class="project-details">{{ item.title }}</span>
                             </span>
                         </figure>
                     </div>
                 </div>
-
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
-                    <div class="project">
-                        <figure class="img-responsive">
-                            <img src="image/trophy (2).png">
-                            <span class="actions">
-                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
-                            </span>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
-                    <div class="project">
-                        <figure class="img-responsive">
-                            <img src="image/trophy (3).png">
-                            <span class="actions">
-                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
-                            </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
-                    <div class="project">
-                        <figure class="img-responsive">
-                            <img src="image/trophy (1).png">
-                            <span class="actions">
-                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
-                            </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
-                    <div class="project">
-                        <figure class="img-responsive">
-                            <img src="image/trophy (2).png">
-                            <span class="actions">
-                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
-                            </span>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
-                    <div class="project">
-                        <figure class="img-responsive">
-                            <img src="image/trophy (3).png">
-                            <span class="actions">
-                                <span class="project-details">狂賀!本校榮獲教育部補習班獎第一名!</span>
-                            </span>
-                        </figure>
-                    </div>
-                </div>
-
             </div>
     </section>
 
-    <!-- CONTACTUS -->
+    <!-- Contactus -->
     <div id="contactUs" class="modal fade ">
         <div class="modal-content container">
             <div class="modal-header">
@@ -300,7 +254,7 @@
         </div>
     </div>
 
-    <!-- LOGIN -->
+    <!-- Login -->
     <div id="login" class="modal fade">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
@@ -335,7 +289,7 @@
     </div>
 
 
-    <!-- FORGETPW -->
+    <!-- Forgetpw -->
     <div id="forgetPW" class="modal fade">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
@@ -369,7 +323,7 @@
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer id="Footer">
         <div class="container">
             <div class="row">
@@ -384,7 +338,7 @@
         </div>
     </footer>
 
-  <script>
+    <script>
         //登入判斷
         new Vue({
             el: '#userLogin',
@@ -426,6 +380,40 @@
             }
         })
 
+        //關於我們
+        new Vue({
+
+            el:"#about-tabs",
+            data:{
+                list:[
+                    {
+                        title: "狂賀!本校榮獲2020教育部補習班獎第一名!",
+                        img:"image/trophy (1).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2019教育部補習班獎第一名!",
+                        img:"image/trophy (2).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2018教育部補習班獎第一名!",
+                        img:"image/trophy (3).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2017教育部補習班獎第一名!",
+                        img:"image/trophy (1).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2016教育部補習班獎第一名!",
+                        img:"image/trophy (2).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2015教育部補習班獎第一名!",
+                        img:"image/trophy (3).png"
+                    }
+                ]
+            },
+
+        });
 
         //師資陣容
         new Vue({
@@ -438,8 +426,7 @@
                               溯洄從之，道阻且長；溯游從之，宛在水中央。
                               蒹葭萋萋，白露未晞。所謂伊人，在水之湄。
                               溯洄從之，道阻且躋；溯游從之，宛在水中坻。
-                              蒹葭采采，白露未已。所謂伊人，在水之涘。
-                              溯洄從之，道阻且右；溯游從之，宛在水中沚。`,
+                              `,
                         img: "image/teacher (1).png"
                     },
                     {
@@ -473,9 +460,9 @@
                     },
                     {
                         name: "歷史 李白",
-                        content: `李白（701年5月19日－762年11月30日），字太白，號青蓮居士，中國唐朝詩人，自言祖籍隴西成紀（今甘肅省天水市秦安縣），先世西涼武昭王李暠之後，與李唐皇室同宗。
-                    幼時內遷，寄籍劍南道綿州（今四川省江油市青蓮鎮）。另外，郭沫若研究認為李白出生於吉爾吉斯碎葉河上的碎葉城，屬唐安西都護府（今楚河州托克馬克市），該說有一定影響。
-                    有「詩仙」、「詩俠」、「酒仙」、「謫仙人」等稱呼，活躍於盛唐，為傑出的浪漫主義詩人。與杜甫合稱「李杜」。被賀知章驚呼為「天上謫仙」。` ,
+                        content: `李白（701年5月19日－762年11月30日），字太白，號青蓮居士，中國唐朝詩人，自言祖籍隴西成紀，先世西涼武昭王李暠之後，與李唐皇室同宗。
+                    幼時內遷，寄籍劍南道綿州。另外，郭沫若研究認為李白出生於吉爾吉斯碎葉河上的碎葉城，屬唐安西都護府，該說有一定影響。
+                    有「詩仙」、「詩俠」、「酒仙」、「謫仙人」等稱呼，活躍於盛唐，為傑出的浪漫主義詩人` ,
                         img: "image/teacher (5).png"
                     },
                 ]
@@ -531,7 +518,6 @@
             });
 
         });
-
 
         //回到頂端按鈕
         (function () {
