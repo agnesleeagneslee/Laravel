@@ -199,22 +199,23 @@
         <div class="container">
             <h2 class="page-section-heading text-center text-white">關於我們</h2>
         </div>
-    </section>
-    <section>
-        <div class="container">
-            <hr class="divider-title">
-            <div class="row" id="about-tabs">
-                <div v-for="item in list" class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
-                    <div class="project">
-                        <figure class="img-responsive">
-                            <img  v-bind:src="item.img">
-                            <span class="actions">
-                                <span class="project-details">{{ item.title }}</span>
-                            </span>
-                        </figure>
+        <section id="aboutUs-section">
+            <div class="container">
+                <hr class="divider-title">
+                <div class="row" id="about-tabs">
+                    <div v-for="item in list" class="col-xs-6 col-sm-4 col-md-3 col-lg-4">
+                        <div class="project">
+                            <figure class="img-responsive">
+                                <img v-bind:src="item.img">
+                                <span class="actions">
+                                    <span class="project-details">{{ item.title }}</span>
+                                </span>
+                            </figure>
+                        </div>
                     </div>
                 </div>
-            </div>
+        </section>
+
     </section>
 
     <!-- Contactus -->
@@ -223,7 +224,7 @@
             <div class="modal-header">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12">
-                        <h1 class="modal-title">聯絡我們 Contact</h1>
+                        <h1 class="modal-title">{{title}}</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                 </div>
@@ -231,16 +232,16 @@
             <div class="modal-body row">
                 <div class="col-sm-6">
                     <div class="well">
-                        <h3><i class="fa fa-home fa-1x"></i> 地址 Adress：</h3>
-                        <p>408台中市南屯區公益路二段51號</p>
+                        <h3><i class="fa fa-home fa-1x"></i> {{address.title}}</h3>
+                        <p>{{address.content}}</p>
                         <br />
                         <br />
-                        <h3><i class="fa fa-envelope fa-1x"></i> 信箱E-mail：</h3>
-                        <p>service@agnes.com.tw</p>
+                        <h3><i class="fa fa-envelope fa-1x"></i> {{email.title}}</h3>
+                        <p>{{email.content}}</p>
                         <br />
                         <br />
-                        <h3><i class="fa fa-user fa-1x"></i> 電話 Phone：</h3>
-                        <p>(04) 2326-5860</p>
+                        <h3><i class="fa fa-user fa-1x"></i>{{phone.title}}</h3>
+                        <p>{{phone.content}}</p>
                         <br />
                         <br />
                     </div>
@@ -339,6 +340,32 @@
     </footer>
 
     <script>
+
+        //聯絡我們
+        new Vue({
+            el: "#contactUs",
+            data: {
+                title: '聯絡我們 Contact',
+                address:
+                {
+                    title: '地址 Adress：',
+                    content: '408台中市南屯區公益路二段51號'
+                },
+                email:
+                {
+                    title: '信箱E-mail：',
+                    content: 'service@agnes.com.tw'
+                },
+                phone:
+                {
+                    title: '電話Phone',
+                    content: '(04) 2326-5860'
+                },
+
+            }
+
+        });
+
         //登入判斷
         new Vue({
             el: '#userLogin',
@@ -379,41 +406,6 @@
                     });
             }
         })
-
-        //關於我們
-        new Vue({
-
-            el:"#about-tabs",
-            data:{
-                list:[
-                    {
-                        title: "狂賀!本校榮獲2020教育部補習班獎第一名!",
-                        img:"image/trophy (1).png"
-                    },
-                    {
-                        title: "狂賀!本校榮獲2019教育部補習班獎第一名!",
-                        img:"image/trophy (2).png"
-                    },
-                    {
-                        title: "狂賀!本校榮獲2018教育部補習班獎第一名!",
-                        img:"image/trophy (3).png"
-                    },
-                    {
-                        title: "狂賀!本校榮獲2017教育部補習班獎第一名!",
-                        img:"image/trophy (1).png"
-                    },
-                    {
-                        title: "狂賀!本校榮獲2016教育部補習班獎第一名!",
-                        img:"image/trophy (2).png"
-                    },
-                    {
-                        title: "狂賀!本校榮獲2015教育部補習班獎第一名!",
-                        img:"image/trophy (3).png"
-                    }
-                ]
-            },
-
-        });
 
         //師資陣容
         new Vue({
@@ -491,6 +483,41 @@
                 },
             }
         })
+
+        //關於我們
+        new Vue({
+
+            el: "#about-tabs",
+            data: {
+                list: [
+                    {
+                        title: "狂賀!本校榮獲2020教育部補習班獎第一名!",
+                        img: "image/trophy (1).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2019教育部補習班獎第一名!",
+                        img: "image/trophy (2).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2018教育部補習班獎第一名!",
+                        img: "image/trophy (3).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2017教育部補習班獎第一名!",
+                        img: "image/trophy (1).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2016教育部補習班獎第一名!",
+                        img: "image/trophy (2).png"
+                    },
+                    {
+                        title: "狂賀!本校榮獲2015教育部補習班獎第一名!",
+                        img: "image/trophy (3).png"
+                    }
+                ]
+            },
+
+        });
 
         //Footer
         new Vue({
